@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../src/codecs/json.js"],
+  "sourcesContent": ["// @ts-check\n\n/**\n * @template T\n * @typedef {import('./interface.js').ByteView<T>} ByteView\n */\n\nconst textEncoder = new TextEncoder()\nconst textDecoder = new TextDecoder()\n\nexport const name = 'json'\nexport const code = 0x0200\n\n/**\n * @template T\n * @param {T} node\n * @returns {ByteView<T>}\n */\nexport const encode = (node) => textEncoder.encode(JSON.stringify(node))\n\n/**\n * @template T\n * @param {ByteView<T>} data\n * @returns {T}\n */\nexport const decode = (data) => JSON.parse(textDecoder.decode(data))\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAOA,IAAM,cAAc,IAAI,YAAY;AACpC,IAAM,cAAc,IAAI,YAAY;AAE7B,IAAM,OAAO;AACb,IAAM,OAAO;AAOb,IAAM,SAAS,CAAC,SAAS,YAAY,OAAO,KAAK,UAAU,IAAI,CAAC;AAOhE,IAAM,SAAS,CAAC,SAAS,KAAK,MAAM,YAAY,OAAO,IAAI,CAAC;",
+  "names": []
+}
